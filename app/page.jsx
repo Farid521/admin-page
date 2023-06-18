@@ -12,10 +12,10 @@ export default function Home() {
     target: "",
   });
 
-  const { push } = useRouter();
+  // const { push } = useRouter();
 
   const submitHandler = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     try {
       const jsonData = JSON.stringify(value); // Mengubah value menjadi JSON
