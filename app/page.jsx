@@ -26,7 +26,7 @@ export default function Home() {
         },
         body: jsonData,
       });
-      push("/succes");
+     
     } catch (err) {
       console.log(err);
     }
