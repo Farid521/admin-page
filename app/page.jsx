@@ -13,7 +13,7 @@ export default function Home() {
 
   const handleRedirect = (res) => {
     if (res.status === 200) {
-      window.location.href = "http://localhost:3000/succes";
+      window.location.href = "/succes";
     }
   };
 
