@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [value, setValue] = useState({
@@ -12,10 +11,14 @@ export default function Home() {
     target: "",
   });
 
-  // const { push } = useRouter();
+  const handleRedirect = (res) => {
+    if (res.status === 200) {
+      window.location.href = "http://localhost:3000/succes";
+    }
+  };
 
   const submitHandler = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     try {
       const jsonData = JSON.stringify(value); // Mengubah value menjadi JSON
@@ -25,8 +28,7 @@ export default function Home() {
           "Content-Type": "application/json",
         },
         body: jsonData,
-      });
-     
+      }).then(handleRedirect);
     } catch (err) {
       console.log(err);
     }
