@@ -11,12 +11,6 @@ export default function Home() {
     target: "",
   });
 
-  const handleRedirect = (res) => {
-    if (res.status === 200) {
-      window.location.href = "/succes";
-    }
-  };
-
   const submitHandler = async (e) => {
     // e.preventDefault();
 
@@ -28,7 +22,7 @@ export default function Home() {
           "Content-Type": "application/json",
         },
         body: jsonData,
-      }).then(handleRedirect);
+      })
     } catch (err) {
       console.log(err);
     }
